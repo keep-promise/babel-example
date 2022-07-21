@@ -5,3 +5,11 @@ Babel的插件大致可以分为语法插件和转换插件：
 语法插件：作用于解析阶段，使得babel能够解析更多的语法，官方的语法插件以babel-plugin-syntax开头。
 
 转换插件：在转换这一步把源码转换并输出，官方的转换插件以babel-plugin-transform（正式）或 babel-plugin-proposal（提案）开头。
+
+在命令行中配置各种插件（plugins）或者预设（presets，也就是一组插件），
+
+但是这样并不利于后期的查看或者维护，
+
+而且大多时候babel都是结合webpack或者gulp等打包工具开发，不会直接通过命令行的方式；
+
+Babel推荐通过配置文件的方式来进行管理。
