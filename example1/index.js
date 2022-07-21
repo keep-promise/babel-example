@@ -1,1 +1,1 @@
-let fun = () => console.log('hello babel.js')
+let fun = () => console.log('hello babel')
