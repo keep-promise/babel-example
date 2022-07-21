@@ -10,3 +10,5 @@ babel编译之后
 let fun = function () {
   return console.log('hello babel.js');
 };
+
+ES6箭头函数，就是通过@babel/plugin-transform-arrow-functions这个插件来转换
