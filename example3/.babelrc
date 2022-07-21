@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": "last 2 Chrome versions",
+        "spec": true,
+        "loose": false,
+        "corejs": 3,
+        "useBuiltIns":"usage",
+        "include": [
+          "@babel/plugin-transform-arrow-functions",
+          "es.object.assign"
+        ]
+      }
+    ]
+  ]
+}
