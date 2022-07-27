@@ -326,4 +326,4 @@ var promise = new _promise["default"](function (resolve, reject) {
 
 一个显而易见的区别就是打开IE11浏览器，如果引入了@babel/polyfill，在控制台我们可以执行Object.assign({}, {})；而如果引入了@babel/runtime，会提示你报错，因为Object上没有assign函数。
 
-
+https://zhuanlan.zhihu.com/p/326824078
