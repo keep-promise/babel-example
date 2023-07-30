@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","names":["fun","console","log"],"sources":["index.js"],"sourcesContent":["let fun = () => console.log('hello babel')\n"],"mappings":"AAAA,IAAIA,GAAG,GAAGA,CAAA,KAAMC,OAAO,CAACC,GAAG,CAAC,aAAa,CAAC"}

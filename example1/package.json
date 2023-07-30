@@ -8,7 +8,7 @@
     "build:dir": "npx babel src -d dist --ignore src/**/*.spec.js",
     "build:copy": "npx babel src -d dist --copy-files",
     "build:plugin": "npx babel index.js -o bundle.js --plugins @babel/plugin-transform-arrow-functions",
-    "build:preset":"npx babel index.js -o bundle.js --presets @babel/preset-env",
+    "build:preset": "npx babel index.js -o bundle.js --presets @babel/preset-env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

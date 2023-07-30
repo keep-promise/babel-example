@@ -3,11 +3,36 @@
     [
       "@babel/env",
       {
+// 它是用来描述我们在项目中想要支持的目标浏览器环境
         "targets": "last 2 Chrome versions",
+
+// 这个属性主要是给其他插件传递参数，比如@babel/plugin-transform-arrow-functions，
+// 默认是 false，设为 true 后
+// 1. 将箭头函数生成的函数用.bind(this)包裹一下，以便在函数内部继续使用 this，而不是重命名 this
+// 2. 加一个检查防止函数被实例化
+// 3. 给箭头函数加一个名字
         "spec": true,
+
+// 这个属性也主要是给其他插件传递参数（比如@babel/plugin-transform-classes）
+// 默认是 false，类的方法直接定义在构造函数上；
+// 而设置为 true 后，类的方法被定义到了原型上面，这样在类的继承时可能会引起问题
         "loose": false,
-        "corejs": 3,
-        "useBuiltIns":"usage",
+
+
+// useBuiltIns 和 corejs
+// useBuiltIns 这个属性决定是否引入 polyfill，
+// useBuiltIns可以配置三个值：false（不引入）、usage（按需引入）和 entry（项目入口处引入）；
+// corejs 表示引入哪个版本的 core-js，可以选择 2（默认）或者 3，只有当 useBuiltIns 不为 false 时才会生效。
+        "corejs": 3,  // core-js的版本，只有当 useBuiltIns 不为 false 时才会生效
+        "useBuiltIns":"usage", // 按需引入
+
+
+// include转换时总是会启用插件的数组，格式是 Array<string|RegExp>，它可以是一下两种值：
+
+// Babel 插件
+// 内置的 core-js，比如 es.map，es.set 等
+// 比如我们在 last 2 Chrome versions 目标浏览器环境下，不会转换箭头函数和 Class，
+// 但是我们可以将转换箭头函数的插件配置到 include 中，这样不管我们的目标浏览器怎么更换，箭头函数语法总是会转换：
         "include": [
           "@babel/plugin-transform-arrow-functions",
           "es.object.assign"

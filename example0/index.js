@@ -12,7 +12,7 @@ var options = {
   plugins: [],
   presets: [],
 };
-
+// 转换
 babelCore.transform(sourceCode, options, function (err, result) {
   console.log("source code：");
   console.log(sourceCode);
