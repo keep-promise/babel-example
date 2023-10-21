@@ -56,7 +56,7 @@ SyntaxError: Cannot use import statement outside a module
 错误原因是NodeJS会默认以CommonJS的规范来执行JavaScript代码，所以NodeJS的语法与ECMAScript的语法规范不同，Node的模块特色时module.exports和require模式，而ES Module的模块关键字为 export和import。
 Node控制台提出了这个问题的解决方案
 1. **在packpage.json中定义type为module**
-2. 使用mjs为后缀定义使用ES Module的文件
+2. **使用mjs为后缀定义使用ES Module的文件**
 
 
 ### 1. 在packpage.json中定义type为module
@@ -71,7 +71,8 @@ ReferenceError: require is not defined in ES module scope, you can use import in
 可以将文件命名为.cjs结尾，或者将package.json中的type去掉
 
 ## babel解决方案
-针对这种场景，NodeJS无法处理既包含ES Module模块又包含CommonJS的模块规范，鱼和熊掌的问题来了。为了迎合全新的编程风格，NodeJS中往往也需要大量按照ES规范去进行编程，这样既想保持Node本来的规范，又想使用完整的ECMA规范，就需要将babel追加到Node项目中。
+NodeJS无法处理既包含ES Module模块又包含CommonJS的模块规范，鱼和熊掌的问题来了。
+为了迎合全新的编程风格，NodeJS中往往也需要大量按照ES规范去进行编程，这样既想保持Node本来的规范，又想使用完整的ECMA规范，就需要将babel追加到Node项目中。
 ```js
 "devDependencies": {
   "@babel/cli": "^7.15.7",
