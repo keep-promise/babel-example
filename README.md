@@ -37,6 +37,7 @@ ES12（2021）： replaceAll、Promise.any、WeakRefs、逻辑运算符和赋值
 ### 在浏览器中使用 babel
 
 babel 在编程使用中有很多种，最简单的方式是通过在浏览器中使用 babel 提供的 browser 实现并且配合 type 为 text/babel 的 script 标签中编写新的代码。但是这种方式仅仅适用于学习阶段，如果你在浏览器中直接使用 babel 运行 JavaScript 那是完全不适合生产环境的。因为它在执行 polyfill 时会大量的消耗资源，所以推荐在本地的开发环境中通过 Webpack 结合 babel 库来进行代码的处理。
+<script type=text/babel></script>
 
 ## 介绍-使用场景
 
