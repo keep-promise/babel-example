@@ -287,7 +287,7 @@ module.exports = {
 因此也是推荐使用最新的 core-js@3。
 
 ### @babel/preset-env 与 core-js
-在上面@babel/preset-env 配置中有 **useBuiltIns 和 corejs**s 两个属性，是用来控制所需的 core-js 版本；我们以 Object.assign、filter 和 Promise 为例，相关代码在 demo5：
+在上面@babel/preset-env 配置中有 **useBuiltIns 和 corejs** 两个属性，是用来控制所需的 core-js 版本；我们以 Object.assign、filter 和 Promise 为例，相关代码在 demo5：
 ```js
 Object.assign({}, {});
 
@@ -423,7 +423,10 @@ var promise = new \_promise["default"](function (resolve, reject) {
 
 ## @babel/polyfill 和@babel/runtime 的区别
 @babel/polyfill 和@babel/runtime 的区别：
-前者改造目标浏览器，让你的浏览器拥有本来不支持的特性；
-后者改造你的代码，让你的代码能在所有目标浏览器上运行，但不改造浏览器。
+1. 前者改造目标浏览器，让你的浏览器拥有本来不支持的特性；
+把没有的方法加上
+
+2. 后者改造你的代码，让你的代码能在所有目标浏览器上运行，但不改造浏览器。
+把不支持的方法调用重命名为从@babel/runtime导出的方法名
 
 一个显而易见的区别就是打开 IE11 浏览器，如果引入了@babel/polyfill，在控制台我们可以执行 Object.assign({}, {})；而如果引入了@babel/runtime，会提示你报错，因为 Object 上没有 assign 函数。
